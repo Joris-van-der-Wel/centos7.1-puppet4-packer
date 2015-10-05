@@ -31,6 +31,7 @@
         "sudo mkdir /tmp/isomount",
         "sudo mount -t iso9660 -o loop /home/vagrant/VBoxGuestAdditions.iso /tmp/isomount",
         "sudo /tmp/isomount/VBoxLinuxAdditions.run || true",
+        "sudo lsmod | grep -i ^vbox",
         "sudo umount /tmp/isomount",
         "sudo rm -rf /tmp/isomount /home/vagrant/VBoxGuestAdditions.iso",
         "sudo rpm -ivh https://yum.puppetlabs.com/puppetlabs-release-el-7.noarch.rpm",
