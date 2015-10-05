@@ -35,6 +35,7 @@ man
 info
 sudo
 # do not install these:
+-postfix
 -linux-firmware
 -b43-openfwwf
 -atmel-firmware
@@ -62,6 +63,8 @@ sudo
 -iwl100-firmware
 -iwl135-firmware
 -iwl3160-firmware
+-aic94xx-firmware
+-alsa-firmware
 %end
  
  
