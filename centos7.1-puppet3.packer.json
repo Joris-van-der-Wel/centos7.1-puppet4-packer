@@ -53,7 +53,7 @@
         "artifact_type": "vagrant.box",
         "metadata": {
           "provider": "virtualbox",
-          "version": "2.0.0",
+          "version": "2.0.1",
           "created_at": "{{timestamp}}",
           "description": "# CentOS 7.1 x86_64 with the puppet 3 agent pre-installed.\n\nCan be used with `puppet apply` as a vagrant provisioner. The puppet agent service is not running by default. Firewall is enabled. Selinux is set to permissive.\n\nThe packer configuration can be found at https://github.com/Joris-van-der-Wel/centos7.1-puppet3-packer"
         }
