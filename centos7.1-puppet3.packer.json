@@ -27,16 +27,29 @@
       "inline": [
         "sleep 30",
         "sudo yum -y update",
+        "echo === Rebooting... ===",
+        "sudo reboot",
+        "sleep 3600"
+      ]
+    },
+    {
+      "type": "shell",
+      "pause_before": "20s",
+      "inline": [
+        "echo === Rebooted ===",
         "sudo yum -y install bzip2 gcc kernel-headers \"kernel-devel-uname-r == $(uname -r)\"",
+        "echo === Installing VirtualBox Guest Additions ===",
         "sudo mkdir /tmp/isomount",
         "sudo mount -t iso9660 -o loop /home/vagrant/VBoxGuestAdditions.iso /tmp/isomount",
         "sudo /tmp/isomount/VBoxLinuxAdditions.run || true",
         "sudo lsmod | grep -i ^vbox",
         "sudo umount /tmp/isomount",
         "sudo rm -rf /tmp/isomount /home/vagrant/VBoxGuestAdditions.iso",
+        "echo === Installing puppet ===",
         "sudo rpm -ivh https://yum.puppetlabs.com/puppetlabs-release-el-7.noarch.rpm",
         "sudo yum -y install puppet",
         "sudo mkdir -p /var/lib/puppet/state/graphs/",
+        "echo === Clean up yum ===",
         "sudo yum clean all"
       ]
     }
