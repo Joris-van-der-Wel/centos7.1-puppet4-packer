@@ -35,7 +35,8 @@
         "sudo rm -rf /tmp/isomount /home/vagrant/VBoxGuestAdditions.iso",
         "sudo rpm -ivh https://yum.puppetlabs.com/puppetlabs-release-el-7.noarch.rpm",
         "sudo yum -y install puppet",
-        "sudo mkdir -p /var/lib/puppet/state/graphs/"
+        "sudo mkdir -p /var/lib/puppet/state/graphs/",
+        "sudo yum clean all"
       ]
     }
   ],
