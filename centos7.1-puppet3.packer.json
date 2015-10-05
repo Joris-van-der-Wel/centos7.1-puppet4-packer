@@ -27,7 +27,7 @@
       "inline": [
         "sleep 30",
         "sudo yum -y update",
-        "sudo yum -y install bzip2 gcc kernel-headers kernel-devel-3.10.0-229.el7.x86_64",
+        "sudo yum -y install bzip2 gcc kernel-headers \"kernel-devel-uname-r == $(uname -r)\"",
         "sudo mkdir /tmp/isomount",
         "sudo mount -t iso9660 -o loop /home/vagrant/VBoxGuestAdditions.iso /tmp/isomount",
         "sudo /tmp/isomount/VBoxLinuxAdditions.run || true",
