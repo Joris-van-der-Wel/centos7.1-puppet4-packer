@@ -5,7 +5,7 @@ skipx
 lang en_US.UTF-8
 keyboard us
 timezone UTC
-network --onboot yes --device eth0 --bootproto dhcp --hostname centos7-1-puppet3-vagrant.local
+network --onboot yes --device eth0 --bootproto dhcp --hostname centos7-1-puppet4-vagrant.local
 rootpw vagrant
 user --name=vagrant --groups=wheel --password=vagrant
 auth --enableshadow --passalgo=sha512 --kickstart

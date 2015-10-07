@@ -10,7 +10,7 @@
       "http_directory": "./",
       "boot_command": [
         "<esc><wait>",
-        "linux ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/centos7.1-puppet3.ks",
+        "linux ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/centos7.1-puppet4.ks",
         "<enter><wait>"
       ],
       "shutdown_command": "sudo shutdown -P now",
@@ -46,9 +46,8 @@
         "sudo umount /tmp/isomount",
         "sudo rm -rf /tmp/isomount /home/vagrant/VBoxGuestAdditions.iso",
         "echo === Installing puppet ===",
-        "sudo rpm -ivh https://yum.puppetlabs.com/puppetlabs-release-el-7.noarch.rpm",
-        "sudo yum -y install puppet",
-        "sudo mkdir -p /var/lib/puppet/state/graphs/",
+        "sudo rpm -ivh https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm",
+        "sudo yum -y install puppet-agent",
         "echo === Clean up yum ===",
         "sudo yum clean all"
       ]
@@ -58,17 +57,17 @@
     [
       {
         "type": "vagrant",
-        "output": "centos7.1-puppet3.box"
+        "output": "centos7.1-puppet4.box"
       },
       {
         "type": "atlas",
-        "artifact": "jorisw/centos7.1-puppet3",
+        "artifact": "jorisw/centos7.1-puppet4",
         "artifact_type": "vagrant.box",
         "metadata": {
           "provider": "virtualbox",
           "version": "2.0.2",
           "created_at": "{{timestamp}}",
-          "description": "# CentOS 7.1 x86_64 with the puppet 3 agent pre-installed.\n\nCan be used with `puppet apply` as a vagrant provisioner. The puppet agent service is not running by default. Firewall is enabled. Selinux is set to permissive.\n\nThe packer configuration can be found at https://github.com/Joris-van-der-Wel/centos7.1-puppet3-packer"
+          "description": "# CentOS 7.1 x86_64 with the puppet 4 agent pre-installed.\n\nCan be used with `puppet apply` as a vagrant provisioner. The puppet agent service is not running by default. Firewall is enabled. Selinux is set to permissive.\n\nThe packer configuration can be found at https://github.com/Joris-van-der-Wel/centos7.1-puppet4-packer"
         }
       }
     ]
